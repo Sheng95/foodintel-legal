@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il report gratuito del tuo comune · Food Intelligence</title>
+<meta name="description" content="Locali tipo per tipo, dove passa la gente, quanto costa un locale, zona per zona. Il PDF gratuito di @foodintel.it.">
+<!-- Anteprima del link nei DM di Instagram e su Facebook: senza questa
+     pagina il link andava dritto al PDF e l'anteprima mostrava i suoi byte
+     ("%PDF-1.7 ..."). Il link del report arriva in ?u= e la pagina lo apre. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Food Intelligence · @foodintel.it">
+<meta property="og:title" content="Il report gratuito del tuo comune">
+<meta property="og:description" content="Locali tipo per tipo, dove passa la gente, quanto costa un locale. Tocca per aprire il PDF.">
+<meta property="og:image" content="https://sheng95.github.io/foodintel-legal/report-anteprima.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icona.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <span class="marchio">Food Intelligence · @foodintel.it</span>
+  <h1 id="titolo">Il report gratuito del tuo comune</h1>
+</header>
+<p id="stato">Sto aprendo il PDF…</p>
+<p><a id="apri" class="pulsante" href="#">Apri il report (PDF)</a></p>
+<p class="nota">Hai già in mente una via o una zona? Scrivi <b>SU MISURA</b> in DM a <b>@foodintel.it</b>.</p>
+</main>
+<script>
+// Solo link di Cloudinary verso un PDF: la pagina non deve poter mandare
+// chiunque ovunque.
+(function () {
+  var q = new URLSearchParams(location.search);
+  var u = q.get("u") || "";
+  var c = q.get("c");
+  if (c) document.getElementById("titolo").textContent = "Il report gratuito di " + c;
+  var ok = /^https:\/\/res\.cloudinary\.com\/[\w-]+\/(image|raw)\/upload\/[\w\/.-]+\.pdf$/.test(u);
+  var stato = document.getElementById("stato");
+  var apri = document.getElementById("apri");
+  if (!ok) {
+    stato.textContent = "Link del report non valido: scrivici in DM e te lo rimandiamo.";
+    apri.style.display = "none";
+    return;
+  }
+  apri.href = u;
+  stato.textContent = "Se il PDF non si apre da solo, tocca il pulsante qui sotto.";
+  location.replace(u);
+})();
+</script>
+</body>
+</html>

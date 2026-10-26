@@ -57,3 +57,13 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .95em; 
 nav.pagine { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; font-size: 15px; }
 .en { margin-top: 48px; padding-top: 16px; border-top: 2px dashed var(--border); }
 footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+.pulsante {
+  display: inline-block;
+  background: var(--red);
+  color: #f6f0e1;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nota { color: var(--muted); font-size: 15px; }
