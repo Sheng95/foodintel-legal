@@ -3,8 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Food Intelligence</title>
-<meta name="description" content="Food Intelligence (@foodintel.it): dati sul mercato della ristorazione italiana. Privacy, cancellazione dei dati e termini d'uso.">
+<title>Food Intelligence · Il report gratuito del tuo comune</title>
+<meta name="description" content="Dove aprire un locale, con quanti soldi. Ogni giorno una mappa della ristorazione italiana con dati pubblici, e il report gratuito del tuo comune: locali tipo per tipo, dove passa la gente, quanto costa un locale.">
+<!-- Il link nella bio di @foodintel.it. Anteprima del link su Instagram e Facebook. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Food Intelligence · @foodintel.it">
+<meta property="og:title" content="Il report gratuito del tuo comune">
+<meta property="og:description" content="Dove aprire un locale, con quanti soldi. Locali tipo per tipo, dove passa la gente, quanto costa un locale. Gratis, per qualunque comune italiano.">
+<meta property="og:image" content="https://sheng95.github.io/foodintel-legal/anteprima-profilo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icona.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -12,10 +21,48 @@
 <main>
 <header>
   <span class="marchio">Food Intelligence · @foodintel.it</span>
-  <h1>Dati sul mercato della ristorazione italiana</h1>
 </header>
-<p>Food Intelligence pubblica su Instagram, all'account <a href="https://www.instagram.com/foodintel.it/">@foodintel.it</a>, analisi basate su dati pubblici: quanto costa aprire un locale, dove mancano certe cucine, quanto è diffuso il delivery, città per città.</p>
-<p>Vuoi il report gratuito del tuo comune? Commenta un nostro post con <code>REPORT</code> seguito dal nome del comune (per esempio <code>REPORT Bologna</code>): te lo mandiamo in DM.</p>
+
+<section class="eroe">
+  <h1>Dove aprire un locale, e con quanti soldi.</h1>
+  <p class="sotto">Nessuna opinione, solo numeri: dati pubblici sulla ristorazione italiana, città per città.</p>
+</section>
+
+<section class="cta" id="report">
+  <h2>Il report gratuito del tuo comune</h2>
+  <p>Un PDF sul tuo comune, in DM in pochi minuti. Gratis, per qualunque comune italiano.</p>
+  <form class="modulo" id="modulo" autocomplete="off">
+    <input id="comune" name="comune" type="text" inputmode="text" placeholder="Il tuo comune (es. Bologna)" aria-label="Il tuo comune" maxlength="60">
+    <button class="pulsante" type="submit">Copia il messaggio e apri Instagram</button>
+  </form>
+  <p class="esito" id="esito" role="status" aria-live="polite"></p>
+  <ol class="passi">
+    <li>Scrivi qui il tuo comune: il messaggio da mandare (<code>REPORT</code> e il nome) si copia da solo.</li>
+    <li>Si apre la chat con <b>@foodintel.it</b>: incolla e invia.</li>
+    <li>Il report arriva in DM. Se preferisci, commenta <code>REPORT</code> e il comune sotto un nostro post.</li>
+  </ol>
+  <p class="nota">Il nome del comune non lascia il tuo telefono: questa pagina non raccoglie niente e non usa cookie.</p>
+  <noscript><p><a class="pulsante" href="https://ig.me/m/foodintel.it">Apri la chat su Instagram</a> e scrivi REPORT seguito dal tuo comune.</p></noscript>
+</section>
+
+<h2>Cosa trovi nel report</h2>
+<div class="carte">
+  <div class="carta"><b>Il confronto con comuni simili</b><span>Quanti locali ha il tuo comune rispetto a città di dimensioni vicine, e cosa salta all'occhio.</span></div>
+  <div class="carta"><b>Il mercato, tipo per tipo</b><span>Bar, pizzerie, ristoranti, gelaterie, pasticcerie: per ognuno, se sono già tanti o se c'è spazio.</span></div>
+  <div class="carta"><b>Dove passa la gente</b><span>Una mappa con abitanti, scuole, uffici e fermate, e le zone con tanto passaggio e pochi locali.</span></div>
+  <div class="carta"><b>Quanto costa un locale</b><span>Affitto e acquisto dei negozi, zona per zona, dove i dati ci sono.</span></div>
+</div>
+
+<h2>Hai già una via in mente?</h2>
+<p>Con il report <b>su misura</b> guardiamo la tua zona o la tua via: concorrenti vicini, passaggio, costi. Scrivi <code>SU MISURA</code> in DM con il tipo di locale e la zona, e ti spieghiamo come funziona.</p>
+<p><a class="pulsante secondario" href="https://ig.me/m/foodintel.it">Scrivici in DM</a></p>
+
+<h2>Cosa guardare sul profilo</h2>
+<p>Ogni giorno una mappa diversa: dove abita la gente, dove manca un locale, quanto costa un negozio, quali sono i comuni dove si guadagna di più. <a href="https://www.instagram.com/foodintel.it/">Vai al profilo @foodintel.it</a>.</p>
+
+<h2>Da dove vengono i numeri</h2>
+<p class="fonti">ISTAT (abitanti e sezioni di censimento), Agenzia delle Entrate – OMI (affitti e prezzi dei negozi), MEF (redditi), OpenStreetMap e Overture Maps (i locali). Le mappe aperte sono volontarie e a volte incomplete: dove manca un locale, i numeri vanno letti come minimi, e nel report lo diciamo. Sono dati a scopo informativo, non una consulenza.</p>
+
 <h2>Informazioni legali</h2>
 <ul>
   <li><a href="privacy.html">Informativa sulla privacy</a> (Privacy policy)</li>
@@ -25,5 +72,45 @@
 <p>Contatti: <a href="mailto:sheng.damico@gmail.com">sheng.damico@gmail.com</a></p>
 <footer>Food Intelligence · @foodintel.it</footer>
 </main>
+<script>
+// Il messaggio da mandare: "REPORT" e il comune. Si copia negli appunti e si apre la chat;
+// niente va da nessuna parte (nessuna richiesta, nessun contatore).
+(function () {
+  var DM = "https://ig.me/m/foodintel.it";
+  var modulo = document.getElementById("modulo");
+  var campo = document.getElementById("comune");
+  var esito = document.getElementById("esito");
+
+  function copia(testo) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(testo);
+    }
+    return new Promise(function (ok, no) {
+      var t = document.createElement("textarea");
+      t.value = testo; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+      document.body.appendChild(t); t.select();
+      try { document.execCommand("copy") ? ok() : no(); } catch (e) { no(e); } finally { document.body.removeChild(t); }
+    });
+  }
+
+  modulo.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var comune = campo.value.replace(/\s+/g, " ").trim();
+    if (!comune) {
+      esito.textContent = "Scrivi il nome del tuo comune, poi tocca il pulsante.";
+      campo.focus();
+      return;
+    }
+    var messaggio = "REPORT " + comune;
+    copia(messaggio).then(function () {
+      esito.textContent = "Copiato: «" + messaggio + "». Incollalo nella chat e invia.";
+    }, function () {
+      esito.textContent = "Nella chat scrivi: «" + messaggio + "».";
+    }).then(function () {
+      setTimeout(function () { window.location.href = DM; }, 700);
+    });
+  });
+})();
+</script>
 </body>
 </html>

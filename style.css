@@ -67,3 +67,49 @@ footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
   text-decoration: none;
 }
 .nota { color: var(--muted); font-size: 15px; }
+
+/* Pagina del profilo (index.html): il link nella bio di Instagram. */
+.eroe { margin: 8px 0 28px; }
+.eroe h1 { font-size: 34px; }
+.eroe .sotto { font-size: 19px; color: var(--muted); margin: 8px 0 0; }
+.cta {
+  background: var(--paper-dim);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 20px 18px;
+  margin: 0 0 32px;
+}
+@media (prefers-color-scheme: dark) { .cta { border-color: var(--red); } }
+.cta h2 { margin: 0 0 4px; font-size: 24px; }
+.cta p { margin: 8px 0; }
+.modulo { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 6px; }
+.modulo input {
+  flex: 1 1 220px;
+  min-width: 0;
+  font: inherit;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--text);
+}
+.modulo input:focus-visible, .pulsante:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.modulo button.pulsante { border: 0; font: inherit; font-weight: 700; cursor: pointer; flex: 1 1 100%; }
+@media (min-width: 560px) { .modulo button.pulsante { flex: 0 0 auto; } }
+.esito { min-height: 1.6em; color: var(--muted); font-size: 15px; margin: 6px 0 0; }
+.passi { padding-left: 0; list-style: none; counter-reset: passo; margin: 12px 0 0; }
+.passi li { counter-increment: passo; position: relative; padding-left: 38px; margin: 10px 0; }
+.passi li::before {
+  content: counter(passo);
+  position: absolute; left: 0; top: 1px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--red); color: #f6f0e1;
+  font: 700 14px/26px ui-monospace, Menlo, Consolas, monospace; text-align: center;
+}
+.carte { display: grid; gap: 12px; grid-template-columns: 1fr; margin: 12px 0; }
+@media (min-width: 560px) { .carte { grid-template-columns: 1fr 1fr; } }
+.carta { border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; background: var(--paper-dim); }
+.carta b { display: block; margin-bottom: 2px; }
+.carta span { color: var(--muted); font-size: 15px; }
+.pulsante.secondario { background: transparent; color: var(--red); border: 2px solid var(--red); }
+.fonti { font-size: 15px; color: var(--muted); }
